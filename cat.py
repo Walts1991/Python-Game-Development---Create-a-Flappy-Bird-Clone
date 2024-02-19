@@ -18,16 +18,16 @@ colorChoices = [greenyellow,orange,yellow,purple,black,red,grey]
 
 pygame.init() #import modules from pygame
 
-surfaceWidth = 800
-surfaceHeight = 500
-imageHeight = 47
-imageWidth = 94
+surfaceWidth = 1600
+surfaceHeight = 900
+imageHeight = 200
+imageWidth = 105
 
-surface = pygame.display.set_mode((surfaceWidth,surfaceHeight)) #create the surface that will be used to draw on 800x400 pixels
+surface = pygame.display.set_mode((surfaceWidth,surfaceHeight)) #create the surface that will be used to draw on 1600x900 pixels
 pygame.display.set_caption("Helicopter") #sets window title
 clock = pygame.time.Clock() #used to track time for frames per second (smoothness)
 
-img = pygame.image.load("helicopter-v1.png") #define image outside of helicopter function
+img = pygame.image.load("cat-v1.png") #define image outside of cat function
 
 def score(count):
     font = pygame.font.Font("freesansbold.ttf",20)
@@ -84,8 +84,8 @@ def helicopter(x,y,image):
 
 #creates game loop to run through code x amount of times per second
 def main():
-    x = 150 #higher x = position is further right
-    y = 200 #higher y = position is further down
+    x = 250 #higher x = position is further right
+    y = 300 #higher y = position is further down
     y_move = 0
 
     x_block = surfaceWidth
@@ -109,11 +109,11 @@ def main():
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    y_move = -5
+                    y_move = -4
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_UP:
-                    y_move = 5
+                    y_move = 4
 
         y += y_move
 
