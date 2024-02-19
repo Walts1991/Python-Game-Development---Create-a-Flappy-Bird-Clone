@@ -91,10 +91,10 @@ def main():
     x_block = surfaceWidth
     y_block = 0
 
-    gap = int(imageHeight * 3)
+    gap = int(imageHeight * 2)
     block_width = 75
     block_height = randint(0,surfaceHeight-gap)
-    block_move = 3
+    block_move = 4
 
     current_score = 0
 
@@ -109,11 +109,11 @@ def main():
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP:
-                    y_move = -4
+                    y_move = -5
 
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_UP:
-                    y_move = 4
+                    y_move = 5
 
         y += y_move
 
@@ -154,17 +154,17 @@ def main():
             #current_score += 1
 
         if 5 <= current_score < 10:
-            block_move = 3.5
-            gap = int(imageHeight * 2.75)
+            block_move = 6
+            gap = int(imageHeight * 1.85)
         if 10 <= current_score < 15:
-            block_move = 4
-            gap = int(imageHeight * 2.5)
+            block_move = 8
+            gap = int(imageHeight * 1.7)
         if 15 <= current_score < 20:
-            block_move = 4.5
-            gap = int(imageHeight * 2.25)
+            block_move = 10
+            gap = int(imageHeight * 1.55)
         if 20 <= current_score < 25:
-            block_move = 5
-            gap = int(imageHeight * 2)
+            block_move = 12
+            gap = int(imageHeight * 1.4)
 
         pygame.display.update() #.update without parameter updates whole screen, same as .flip
         #.update with parameters updates specific areas on screen
